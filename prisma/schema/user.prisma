@@ -1,0 +1,18 @@
+model User {
+  id            String      @id @default(uuid())
+  name          String      @db.VarChar(255)
+  email         String      @unique
+  password      String
+  phoneNumber   String?
+  status        Status      @default(ACTIVE) 
+  
+  profiles      Profile[]   
+
+  roleId      String   
+  role        Role     @relation(fields: [roleId], references: [id],onDelete: Cascade)
+
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@map("users")
+}

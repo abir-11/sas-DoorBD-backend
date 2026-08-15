@@ -1,0 +1,18 @@
+enum Status {
+  ACTIVE
+  INACTIVE
+  BLOCKED
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+enum Scope {
+  ALL
+  OWN
+  DEPARTMENT
+}
+
