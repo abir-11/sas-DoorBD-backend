@@ -9,6 +9,11 @@ import { roleRoutes } from "./modules/role/role.router";
 import { permissionRouter } from "./modules/permission/permission.router";
 import { rolePermissionRouter } from "./modules/rolePermission/rolePermission.router";
 import { adminRouter } from "./modules/admin/admin.router";
+import { productRouter } from "./modules/product/product.route";
+import { categoryRouter } from "./modules/category/category.route";
+import { doorTypeRoutes } from "./modules/doorType/doorType.route";
+import { doorMaterialRoutes } from "./modules/doorMaterial/doorMaterial.route";
+import { doorOpeningTypeRoutes } from "./modules/doorOpeningType/doorOpeningType.route";
 
 const app:Application=express();
 
@@ -31,7 +36,14 @@ app.use("/api/auth",authRouter);
 app.use("/api/auth",adminRouter)
 app.use("/api/v1/role",roleRoutes);
 app.use("/api/v1/permissions", permissionRouter);
-app.use("/api/v1/roles",rolePermissionRouter)
+app.use("/api/v1/roles",rolePermissionRouter);
+app.use("/api/v1/products",productRouter);
+app.use("/api/v1/categories",categoryRouter);
+app.use("/api/v1/door-type",doorTypeRoutes);
+app.use("/api/v1/door-materials",doorMaterialRoutes);
+app.use("/api/v1/door-opening-types",doorOpeningTypeRoutes);
+
+
 
 
 export default app;

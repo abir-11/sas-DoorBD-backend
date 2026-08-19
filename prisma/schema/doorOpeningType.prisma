@@ -1,0 +1,9 @@
+model DoorOpeningType {
+  id        String    @id @default(uuid())
+  nameEn        String  @unique 
+  nameBn        String    @unique
+  products  Product[]
+  createdAt DateTime  @default(now())
+
+  @@map("door_opening_types")
+}

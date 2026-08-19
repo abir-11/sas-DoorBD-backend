@@ -1,0 +1,37 @@
+model Product {
+  id String @id @default(uuid())
+
+  // Basic Information
+  nameEn        String
+  nameBn        String
+  descriptionEn String
+  descriptionBn String
+
+  // Dynamic Enum Fields
+  badge        ProductBadge @default(REGULAR)
+  deliveryType DeliveryType @default(STANDARD_DELIVERY)
+
+  categoryId      String?
+  doorTypeId      String?
+  doorMaterialId  String?
+  doorOpeningId   String?
+
+  // Relations
+  category        Category?        @relation(fields: [categoryId], references: [id])
+  doorType        DoorType?        @relation(fields: [doorTypeId], references: [id])
+  doorMaterial    DoorMaterial?    @relation(fields: [doorMaterialId], references: [id])
+  doorOpeningType DoorOpeningType? @relation(fields: [doorOpeningId], references: [id])
+
+  // Pricing & Inventory
+  price         Float
+  discountPrice Float?
+  stock         Int           @default(0)
+  status        ProductStatus @default(ACTIVE)
+
+  images String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("products")
+}

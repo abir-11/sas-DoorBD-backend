@@ -16,3 +16,47 @@ enum Scope {
   DEPARTMENT
 }
 
+enum LockType {
+  KEY
+  DIGITAL
+  PIN
+  FINGERPRINT
+  RFID
+  FACE_RECOGNITION
+  SMART
+  MULTI_LOCK
+}
+
+enum SecurityLevel {
+  BASIC
+  MEDIUM
+  HIGH
+  PREMIUM
+}
+
+enum ProductStatus {
+  ACTIVE
+  INACTIVE
+  OUT_OF_STOCK
+  DRAFT
+}
+
+enum CategoryStatus {
+  ACTIVE
+  INACTIVE
+}
+
+// ডাইনামিক ক্যাটাগরি বা ব্যাজ
+enum ProductBadge {
+  NEW_ARRIVAL
+  OFFER
+  DISCOUNT
+  REGULAR
+}
+
+// ডেলিভারি টাইপ
+enum DeliveryType {
+  INSTANT_DELIVERY
+  EXPRESS_DELIVERY
+  STANDARD_DELIVERY
+}
